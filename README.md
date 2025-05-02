@@ -5,8 +5,9 @@
   O sistema visa proporcionar uma experiência simples e funcional para gerenciamento de livros e empréstimos, usando conceitos de orientação a objetos como herança, polimorfismo, encapsulamento e modularização.
 
 ## 🧱 Estrutura do Projeto
+```
 biblioteca-digital/
-  ´´´├── README.md´´´
+  ├── README.md
   ├── main.py
   └── package/
     ├── livro.py
@@ -14,3 +15,4 @@ biblioteca-digital/
     ├── emprestimo.py
     ├── biblioteca.py
     └── mixins.py
+```
