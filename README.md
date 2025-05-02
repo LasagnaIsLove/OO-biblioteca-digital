@@ -29,8 +29,8 @@ biblioteca-digital/
 ## 🧩 Funcionalidades
 
 - Busca de livros
-- Cadastro de usuários (alunos e funcionários)
-- Login de usuários (alunos e funcionários)
+- Cadastro de usuários (Consumidores e funcionários)
+- Login de usuários (Consumidores e funcionários)
 - Empréstimo e devolução de livros
 - Histórico de empréstimos
 - Controle de disponibilidade dos livros
@@ -44,39 +44,39 @@ biblioteca-digital/
 - Permite que o funcionário cadastre um novo livro no sistema.
 
 ### UC02 – Buscar Livro
-- **Ator:** Aluno ou Funcionário
+- **Ator:** Consumidor ou Funcionário
 - Permite pesquisar livros pelo título, autor ou ISBN.
 
 ### UC03 – Cadastrar Usuário
 - **Ator:** Funcionário
-- Permite cadastrar um novo usuário do sistema (aluno ou funcionário).
+- Permite cadastrar um novo usuário do sistema (Consumidor ou funcionário).
 
 ### UC04 – Realizar Login
-- **Ator:** Aluno ou Funcionário
+- **Ator:** Consumidor ou Funcionário
 - Permite que o usuário entre no sistema usando matrícula e senha.
 
 ### UC05 – Realizar Empréstimo
-- **Ator:** Aluno
-- Permite que o aluno realize o empréstimo de um livro disponível.
+- **Ator:** Consumidor
+- Permite que o Consumidor realize o empréstimo de um livro disponível.
 
 ### UC06 – Devolver Livro
-- **Ator:** Aluno
+- **Ator:** Consumidor
 - Permite a devolução de um livro previamente emprestado.
 
 ### UC07 – Visualizar Histórico
-- **Ator:** Aluno
+- **Ator:** Consumidor
 - Exibe o histórico de empréstimos do usuário.
 
 ---
 
-## 📐 Diagrama de Classes (Descrição Textual)
+## 📐 Diagrama de Classes
 
 ### Classes Principais:
 
 - **Livro**
   - Atributos: título, autor, ISBN, ano, editora, status
 - **Usuario** *(abstrata)*
-  - Subclasses: `Aluno`, `Funcionario`
+  - Subclasses: `Consumidor`, `Funcionario`
   - Atributos: nome, matrícula, email
 - **Emprestimo**
   - Atributos: livro, usuario, data_emprestimo, data_devolucao, devolvido
@@ -84,7 +84,7 @@ biblioteca-digital/
   - Métodos: adicionar_livro(), buscar_livro(), registrar_emprestimo(), registrar_devolucao(), listar_historico()
 
 ### Relacionamentos e Conceitos Aplicados:
-- Herança: `Aluno` e `Funcionario` herdam de `Usuario`
+- Herança: `Consumidor` e `Funcionario` herdam de `Usuario`
 - Polimorfismo: métodos como `exibir_perfil()` implementados de forma distinta em subclasses
 - Composição forte: `Biblioteca` contém listas de `Livro` e `Emprestimo`
 - Associação fraca: `Emprestimo` vincula `Usuario` e `Livro`
