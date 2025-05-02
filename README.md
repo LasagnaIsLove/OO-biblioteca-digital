@@ -28,9 +28,9 @@ biblioteca-digital/
 
 ## 🧩 Funcionalidades
 
-- Cadastro e busca de livros
+- Busca de livros
 - Cadastro de usuários (alunos e funcionários)
-- Login de usuários
+- Login de usuários (alunos e funcionários)
 - Empréstimo e devolução de livros
 - Histórico de empréstimos
 - Controle de disponibilidade dos livros
