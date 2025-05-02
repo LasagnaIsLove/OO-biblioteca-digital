@@ -7,12 +7,12 @@
 ## 🧱 Estrutura do Projeto
 ```
 biblioteca-digital/
-  ├── README.md
-  ├── main.py
-  └── package/
-    ├── livro.py
-    ├── usuario.py
-    ├── emprestimo.py
-    ├── biblioteca.py
-    └── mixins.py
+  ├── 📄 README.md
+  ├── 🧠 main.py
+  └── 📦 package/
+    ├── 📘 livro.py
+    ├── 👤 usuario.py
+    ├── 🔁 emprestimo.py
+    ├── 🏛️ biblioteca.py
+    └── 🧩 mixins.py
 ```
