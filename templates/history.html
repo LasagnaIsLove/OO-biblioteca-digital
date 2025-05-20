@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="stylesheet" href="../static/css/hystory.css" />
+    <link rel="icon" href="../static/images/logo.png" />
+    <title>Historico</title>
+  </head>
+  <body>
+    <header>
+      <a href="/home" style="height: 100%; width: auto"
+        ><img src="../static/images/logo.png" alt="Logo do site" class="logo"
+      /></a>
+      <h1>Biblioteca Digital</h1>
+      <nav>
+        <ul class="nav-list"></ul>
+        <ul class="nav-buttons">
+          <a href="/user/{{ session.codigo }}"
+            ><img
+              src="../static/images/perfil.png"
+              alt="perfil generico"
+              style="height: 100px"
+            />
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main-box">
+        {% if historico %} {% for emprestimo in historico %}
+        <div class="livros-box">
+          <div class="sub-livros-box">
+            <div class="livro">
+              <h2>{{ emprestimo["livro"] }}</h2>
+              <p><strong>Usuario:</strong> {{ emprestimo["nome"] }}</p>
+              <p><strong>Codigo</strong> {{ emprestimo["codigo"] }}</p>
+              <p><strong>ISBN:</strong> {{ emprestimo["ISBN"] }}</p>
+              <p><strong>Quantidade:</strong> {{ emprestimo["quantidade"] }}</p>
+            </div>
+          </div>
+          <div class="button-box">
+            <form action="/devolver" method="post">
+              <input type="hidden" name="ISBN" value="{{ emprestimo['ISBN'] }}" />
+              <button type="submit" class="button-reserva">devolver</button>
+            </form>
+          </div>
+        </div>
+        {% endfor %} {% endif %} {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}{% if success%}
+        <p class="error">{{ success }}</p>
+        {% endif %}
+      </section>
+    </main>
+    <script src="../static/js/alterarValor.js"></script>
+  </body>
+</html>

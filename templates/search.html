@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="stylesheet" href="../static/css/search.css" />
+    <link rel="icon" href="../static/images/logo.png" />
+    <title>Buscar</title>
+  </head>
+  <body>
+    <header>
+      <a href="/home" style="height: 100%; width: auto"
+        ><img src="../static/images/logo.png" alt="Logo do site" class="logo"
+      /></a>
+      <h1>Biblioteca Digital</h1>
+      <nav>
+        <ul class="nav-list"></ul>
+        <ul class="nav-buttons">
+          <a href="/user/{{ session.codigo }}"
+            ><img
+              src="../static/images/perfil.png"
+              alt="perfil generico"
+              style="height: 100px"
+            />
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main-box">
+        <form action="/search" method="post">
+          <input type="text" name="title" id="title" placeholder="Buscar" />
+          <div style="width: 305px">
+            <p style="margin: 0px auto auto auto">Buscar por:</p>
+          </div>
+          <div class="radio-group">
+            <div class="sub-rg">
+              <label class="container-radio"
+                ><input
+                  type="radio"
+                  name="id_type"
+                  value="titulo"
+                  checked
+                /><span class="radio-in"></span>Titulo</label
+              >
+              <label class="container-radio"
+                ><input type="radio" name="id_type" value="autor" /><span
+                  class="radio-in"
+                ></span
+                >Autor</label
+              >
+            </div>
+            <div class="sub-rg">
+              <label class="container-radio"
+                ><input type="radio" name="id_type" value="ano" /><span
+                  class="radio-in"
+                ></span
+                >Ano</label
+              >
+              {% if session["funcionario"] %}
+              <label class="container-radio"
+                ><input type="radio" name="id_type" value="ISBN" /><span
+                  class="radio-in"
+                ></span
+                >ISBN</label
+              >
+              {% endif %}
+            </div>
+          </div>
+          <label class="container-radio"
+            ><input type="checkbox" name="disponivel" checked /><span
+              class="checkbox-in"
+            ></span
+            >Disponivel</label
+          >
+          <button type="submit" class="button-enter">Buscar</button>
+        </form>
+
+        {% if livros %} {% for livro in livros %}
+        <div class="livros-box">
+          <div class="sub-livros-box">
+            <div class="livro">
+              <h2>{{ livro["titulo"] }}</h2>
+              <p><strong>Autor(a):</strong> {{ livro["autor"] }}</p>
+              <p><strong>Ano:</strong> {{ livro["ano"] }}</p>
+              <p>
+                <strong>Diponivel:</strong> {% if livro["disponivel"] %} Sim {%
+                else %} Não {% endif %}
+              </p>
+              {% if session["funcionario"] %}
+              <p><strong>ISBN:</strong> {{ livro["ISBN"] }}</p>
+              <p><strong>Quantidade:</strong> {{ livro["quantidade"] }}</p>
+              {% endif %}
+            </div>
+            {% if session["funcionario"] %}
+            <form action="/incrementar" class="func-box" method="post">
+              <button
+                type="button"
+                onclick="alterarValor(this, 1)"
+                class="button-qtd"
+              >
+                +
+              </button>
+              <input
+                type="number"
+                name="quantidade"
+                id="quantidade"
+                value="{{ livro['quantidade'] }}"
+                class="num-form"
+                min="0"
+              />
+              <input
+                type="hidden"
+                name="ISBN-func"
+                value="{{ livro['ISBN'] }}"
+              />
+              <button
+                type="button"
+                onclick="alterarValor(this, -1)"
+                class="button-qtd"
+              >
+                -
+              </button>
+              <button type="submit" class="button-qtd">ok</button>
+            </form>
+
+            {% endif %}
+          </div>
+          <div class="button-box">
+            <form action="/reservar" method="post">
+              <input type="hidden" name="ISBN" value="{{ livro['ISBN'] }}" />
+              <button type="submit" class="button-reserva" {{ 'disabled' if not
+              livro["disponivel"] else '' }} >Reservar
+              <!-- isso está fechado deus sabe se la como, mas ta funcionando então ok... eu espero  -->
+              <!-- Favor não acrescentar </button> para fechar  -->
+            </form>
+            {% if session["funcionario"] %}
+            <form action="/excluir_livro" method="post">
+              <input type="hidden" name="ISBN" value="{{ livro['ISBN'] }}" />
+              <button type="submit" class="button-reserva">Excluir</button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %} {% endif %} {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}{% if success%}
+        <p class="error">{{ success }}</p>
+        {% endif %}
+      </section>
+    </main>
+    <script src="../static/js/alterarValor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/login.css" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="icon" href="../static/images/logo.png" type="image.png" />
+    <title>Login</title>
+  </head>
+  <body>
+    <header>
+      {% if session.user %}
+      <a href="/home" style="height: 100%; width: auto"
+        ><img src="../static/images/logo.png" alt="Logo do site" class="logo"
+      /></a>
+      {% else %}
+      <a href="/" style="height: 100%; width: auto"
+        ><img src="../static/images/logo.png" alt="Logo do site" class="logo"
+      /></a>
+      {% endif %}
+      <h1>Biblioteca Digital</h1>
+      <nav>
+        <ul class="nav-buttons">
+          {% if session.user %}
+          <a href="/home"><button class="button-login">Voltar</button></a>
+          {% else %}
+          <a href="/"><button class="button-login">Voltar</button></a>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main-box">
+        <img
+          src="../static/images/logo.png"
+          alt="Logo do site"
+          style="
+            width: 160px;
+            -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+          "
+        />
+        <form action="/login" method="POST">
+          <input
+            type="text"
+            id="indentification"
+            name="indentification"
+            placeholder="E-mail ou codigo de usuário"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Senha"
+            required
+          />
+          <button type="submit" class="button-enter">Entrar</button>
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <div class="barra"></div>
+        <p>Novo por aqui?</p>
+        <a href="/register"
+          ><button class="button-login">Criar nova conta</button></a
+        >
+      </section>
+    </main>
+  </body>
+</html>

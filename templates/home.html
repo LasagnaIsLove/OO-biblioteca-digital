@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/home.css" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="icon" href="../static/images/logo.png" type="image.png" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <a href="/home" style="height: 100%; width: auto"
+        ><img src="../static/images/logo.png" alt="Logo do site" class="logo"
+      /></a>
+      <h1>Biblioteca Digital</h1>
+      <nav>
+        <ul class="nav-list">
+          <h2>Bem vindo de volta, {{ session.user }}.</h2>
+        </ul>
+        <ul class="nav-buttons">
+          <a href="/user/{{ session.codigo }}"
+            ><img
+              src="../static/images/perfil.png"
+              alt="perfil generico"
+              style="height: 100px"
+            />
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <button class="toggle-button" onclick="togglesidebar()">☰</button>
+      <div class="sidebar" id="sidebar">
+        <button class="close-button" onclick="togglesidebar()">✖</button>
+        <ul class="sidebar-list">
+          <li><a class="sidebar-links" href="/search">Buscar</a></li>
+          <li><a class="sidebar-links" href="/history">Histórico</a></li>
+          {% if session.admin %}
+          <li>
+            <a class="sidebar-links" href="/register">cadastrar funcionario</a>
+          </li>
+          <li>
+            <a class="sidebar-links" href="/delete">Excluir cadastro</a>
+          </li>
+          {% endif %} {% if session.funcionario %}
+          <li>
+            <a class="sidebar-links" href="/register_book">Cadastrar livro</a>
+          </li>
+          {% endif %}
+
+          <li><a class="sidebar-links" href="/sobre">Sobre</a></li>
+          <li><a class="sidebar-links" href="/contact">Contato</a></li>
+          <li><a class="sidebar-links" href="/somos">Quem somos</a></li>
+          <li><a class="sidebar-links" href="/">Pagina Inicial</a></li>
+        </ul>
+      </div>
+    </main>
+    <script src="../static/js/sidebar.js"></script>
+  </body>
+</html>

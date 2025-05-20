@@ -1,0 +1,223 @@
+/* -----------------------------------body/main-----------------------------------*/
+
+body {
+    background-color: #fff8e7;
+    padding: 130px 0px 0px 0px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -----------------------------------text-----------------------------------*/
+
+/* @font-face{
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+    font-family: Montserrat;
+  }
+* {
+    font-family: Montserrat;
+} */
+
+* {
+    color: #E2CFC3;
+}
+
+a {
+    text-decoration: none;
+    color: #E2CFC3;
+}
+
+ul {
+
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    text-indent: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error {
+    margin: 15px auto auto auto;
+    width: fit-content;
+}
+
+/* -----------------------------------header-----------------------------------*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: #4E342E;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+.nav-list, .nav-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 100%;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+    margin: 0px 0px 0px 15px;
+}
+
+/* -----------------------------------button-----------------------------------*/
+
+button {
+    background-color: #371824;
+    border: none;
+    border-radius: 20px;
+    color: #E2CFC3;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+    color: rgb(255, 255, 255);
+    background-color: #1c0c12;
+    text-decoration: none;
+}
+
+button:active {
+    background-color: #1c0c12;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+    transform: translateY(4px);
+}
+
+/* -----------------------------------input-----------------------------------*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+input {
+    background-color: #4E342E;
+    border: none;
+    border-radius: 20px;
+    color: #E2CFC3;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: flex;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)inset;
+}
+
+input:hover {
+    color: #E2CFC3;
+    background-color: #1c0c12;
+    text-decoration: none;
+}
+
+::placeholder {
+    color: #E2CFC3;
+    font-weight: bold;
+}
+
+input:focus {
+    outline: none;
+    background-color: #1c0c12;
+}
+
+/* isso impede que o autofill do google mude a cor da caixa de texto, então não mexa se não souber uma solução melhor*/
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+/* -----------------------------------sidebar-----------------------------------*/
+
+.sidebar {
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: -40%;
+    background-color: #988278;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding: 105px 20px 0px 20px;
+    z-index: 999;
+}
+
+.sidebar.active {
+    left: 0px;
+}
+
+.sidebar-list{
+    height: 100%;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 5px;
+    /* margin: 0px 0px 20px 0px; */
+}
+
+.sidebar-links{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.toggle-button {
+    position: fixed;
+    font-size: 30px;
+    padding: 5px 15px !important;
+    left: 20px;
+    top: 120px;
+}
+
+.close-button {
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    padding: 5px 15px !important;
+}

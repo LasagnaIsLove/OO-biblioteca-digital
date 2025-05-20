@@ -1,0 +1,53 @@
+.nav-list {
+    width: 50%;
+    margin: 0 10%;
+}
+
+.nav-buttons {
+    margin: auto 15px auto auto;
+    width: 30%;
+    justify-content: right !important;
+}
+
+.nav-links{
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0px;
+    height: 2px;
+    background: #E2CFC3;
+    transition: .3s;
+}
+
+.nav-links:hover::before{
+    width: 100%;
+}
+
+
+.button-login {
+    width: fit-content;
+    height: 50px;
+
+}
+
+.main-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #988278;
+    border-radius: 20px;
+    padding:20px;
+    width: 50%;
+    background-image: url(../images/Estante.png) ;
+    background-size: cover;
+    
+}

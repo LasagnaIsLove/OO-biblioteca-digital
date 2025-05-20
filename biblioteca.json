@@ -1,0 +1,402 @@
+[
+    {
+        "titulo": "O \u00daltimo Sil\u00eancio",
+        "autor": "Henrique Sampaio",
+        "ano": 2017,
+        "ISBN": "978-0-123456-02-8",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "C\u00f3digos de Bruma",
+        "autor": "Alice Mariani",
+        "ano": 2021,
+        "ISBN": "978-0-123456-03-5",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "A Teia de Cristal",
+        "autor": "V\u00edtor Alencar",
+        "ano": 2015,
+        "ISBN": "978-0-123456-04-2",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "As Quatro Esta\u00e7\u00f5es do Vazio",
+        "autor": "Daniela Rocha",
+        "ano": 2023,
+        "ISBN": "978-0-123456-05-9",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Labirinto de Sombras",
+        "autor": "Miguel Dantas",
+        "ano": 2014,
+        "ISBN": "978-0-123456-06-6",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Fragmentos do Norte",
+        "autor": "Clara Villar",
+        "ano": 2019,
+        "ISBN": "978-0-123456-07-3",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Um Mar Chamado Tempo",
+        "autor": "Lucas Verne",
+        "ano": 2020,
+        "ISBN": "978-0-123456-08-0",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Dicion\u00e1rio dos Sonhos",
+        "autor": "Helena Cardoso",
+        "ano": 2016,
+        "ISBN": "978-0-123456-09-7",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Cora\u00e7\u00e3o do Gelo",
+        "autor": "Thiago Nogueira",
+        "ano": 2018,
+        "ISBN": "978-0-123456-10-3",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "As Esferas de \u00c2mbar",
+        "autor": "Bruno Tavano",
+        "ano": 2013,
+        "ISBN": "978-0-123456-11-0",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Horizonte Submerso",
+        "autor": "Renata Lobo",
+        "ano": 2022,
+        "ISBN": "978-0-123456-12-7",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "A Linguagem das Pedras",
+        "autor": "Eduardo Vilela",
+        "ano": 2010,
+        "ISBN": "978-0-123456-13-4",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Sombras da Aurora",
+        "autor": "Carolina Mendes",
+        "ano": 2019,
+        "ISBN": "978-0-123456-14-1",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "No Cora\u00e7\u00e3o da N\u00e9voa",
+        "autor": "Gabriel Peixoto",
+        "ano": 2017,
+        "ISBN": "978-0-123456-15-8",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Arquivos de um Futuro Perdido",
+        "autor": "L\u00edvia Soares",
+        "ano": 2024,
+        "ISBN": "978-0-123456-16-5",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "As Portas de V\u00eanus",
+        "autor": "Jo\u00e3o Amarante",
+        "ano": 2012,
+        "ISBN": "978-0-123456-17-2",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Homem que Colecionava Mundos",
+        "autor": "Silvana Prado",
+        "ano": 2018,
+        "ISBN": "978-0-123456-18-9",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Mem\u00f3rias de Um Sonhador",
+        "autor": "Fl\u00e1vio Nascimento",
+        "ano": 2011,
+        "ISBN": "978-0-123456-19-6",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Entre Duas Almas",
+        "autor": "Aline Farias",
+        "ano": 2023,
+        "ISBN": "978-0-123456-20-2",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "A Cidade Silenciosa",
+        "autor": "Vin\u00edcius Ferraz",
+        "ano": 2020,
+        "ISBN": "978-0-123456-21-9",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Rel\u00f3gio de Areia",
+        "autor": "Catarina Moura",
+        "ano": 2015,
+        "ISBN": "978-0-123456-22-6",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Ventos de Merc\u00fario",
+        "autor": "Diego Aguiar",
+        "ano": 2014,
+        "ISBN": "978-0-123456-23-3",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Rastros na Escurid\u00e3o",
+        "autor": "Isabel Tavares",
+        "ano": 2016,
+        "ISBN": "978-0-123456-24-0",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Jardim das Vozes",
+        "autor": "Marco Aur\u00e9lio Dias",
+        "ano": 2018,
+        "ISBN": "978-0-123456-25-7",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Notas de uma Exist\u00eancia",
+        "autor": "Fernanda Souza",
+        "ano": 2021,
+        "ISBN": "978-0-123456-26-4",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Atlas das Estrelas",
+        "autor": "Pedro Almeida",
+        "ano": 2022,
+        "ISBN": "978-0-123456-27-1",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Caminhos do Imposs\u00edvel",
+        "autor": "Roberta Martins",
+        "ano": 2013,
+        "ISBN": "978-0-123456-28-8",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Inverno Azul",
+        "autor": "Carlos Mendon\u00e7a",
+        "ano": 2020,
+        "ISBN": "978-0-123456-29-5",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Fronteiras do Caos",
+        "autor": "Luciana Braga",
+        "ano": 2016,
+        "ISBN": "978-0-123456-30-0",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Marcas do Invis\u00edvel",
+        "autor": "Andr\u00e9 Torres",
+        "ano": 2017,
+        "ISBN": "978-0-123456-31-7",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Sombras e Sussurros",
+        "autor": "Juliana Neves",
+        "ano": 2021,
+        "ISBN": "978-0-123456-32-4",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "A \u00daltima Sentinela",
+        "autor": "Ot\u00e1vio Fernandes",
+        "ano": 2023,
+        "ISBN": "978-0-123456-33-1",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "A Rosa e o Labirinto",
+        "autor": "Tain\u00e1 Borges",
+        "ano": 2010,
+        "ISBN": "978-0-123456-34-8",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Os Arquivos de Lira",
+        "autor": "Renan Brito",
+        "ano": 2014,
+        "ISBN": "978-0-123456-35-5",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Tempestade Branca",
+        "autor": "Beatriz Lima",
+        "ano": 2022,
+        "ISBN": "978-0-123456-36-2",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Som do Abismo",
+        "autor": "Cristiano Azevedo",
+        "ano": 2019,
+        "ISBN": "978-0-123456-37-9",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Guardi\u00e3o das Vozes",
+        "autor": "Nina Vasconcellos",
+        "ano": 2011,
+        "ISBN": "978-0-123456-38-6",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Despertar de Or\u00edon",
+        "autor": "Danilo Marques",
+        "ano": 2024,
+        "ISBN": "978-0-123456-39-3",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Asas de Prata",
+        "autor": "Ver\u00f4nica Esteves",
+        "ano": 2015,
+        "ISBN": "978-0-123456-40-9",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Livro dos Nomes Perdidos",
+        "autor": "Matheus Camargo",
+        "ano": 2016,
+        "ISBN": "978-0-123456-41-6",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Al\u00e9m do V\u00e9u",
+        "autor": "Patr\u00edcia Linhares",
+        "ano": 2012,
+        "ISBN": "978-0-123456-42-3",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Imp\u00e9rio da Chuva",
+        "autor": "Samuel Freitas",
+        "ano": 2018,
+        "ISBN": "978-0-123456-43-0",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Cr\u00f4nicas da Era de Ferro",
+        "autor": "Joana Mendes",
+        "ano": 2013,
+        "ISBN": "978-0-123456-44-7",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O Livro de Areia e Fogo",
+        "autor": "Eduarda Paz",
+        "ano": 2020,
+        "ISBN": "978-0-123456-45-4",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "As Ruas de Eldora",
+        "autor": "Caio Costa",
+        "ano": 2021,
+        "ISBN": "978-0-123456-46-1",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Mar\u00e9 Noturna",
+        "autor": "L\u00facio Duarte",
+        "ano": 2024,
+        "ISBN": "978-0-123456-47-8",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "O C\u00f3digo de Lys",
+        "autor": "Juliane Martins",
+        "ano": 2022,
+        "ISBN": "978-0-123456-48-5",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "Esta\u00e7\u00e3o Alfa",
+        "autor": "Murilo Antunes",
+        "ano": 2017,
+        "ISBN": "978-0-123456-49-2",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "C\u00e9u em Chamas",
+        "autor": "Vit\u00f3ria Assis",
+        "ano": 2019,
+        "ISBN": "978-0-123456-50-8",
+        "quantidade": 1,
+        "disponivel": true
+    },
+    {
+        "titulo": "1",
+        "autor": "1",
+        "ano": "1",
+        "ISBN": "1",
+        "quantidade": 1,
+        "disponivel": true
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "first_name": "Gabriel",
+        "last_name": "Mota",
+        "password": "456",
+        "email": "gabriel1990mota@gmail.com",
+        "codigo": "A0",
+        "funcionario": true,
+        "admin": true
+    },
+    {
+        "first_name": "rodrigo",
+        "last_name": "atila",
+        "password": "vhqkd456",
+        "email": "241025855@aluno.unb.br",
+        "codigo": "C1",
+        "funcionario": false,
+        "admin": false
+    },
+    {
+        "first_name": "Julia",
+        "last_name": "Japson",
+        "password": "4567",
+        "email": "241011081@aluno.unb.br",
+        "codigo": "C2",
+        "funcionario": false,
+        "admin": false
+    }
+]

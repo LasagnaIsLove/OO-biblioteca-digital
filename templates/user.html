@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/user.css" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="icon" href="../static/images/logo.png" type="image.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <a href="/home" style="height: 100%; width: auto"
+        ><img src="../static/images/logo.png" alt="Logo do site" class="logo"
+      /></a>
+      <h1>Biblioteca Digital</h1>
+      <nav>
+        <ul class="nav-list"></ul>
+        <ul class="nav-buttons">
+          <a href="/home"><button class="button-login">Voltar</button></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main-box">
+        <img
+          src="../static/images/perfil.png"
+          alt="foto de perfil"
+          style="width: 300px; height: 300px"
+        />
+        <div class="user-info">
+          <h2>Nome: {{ session.user }} {{ session.last_name}}</h2>
+          <h2>Email: {{ session.email }}</h2>
+          <h2>Codigo: {{ session.codigo}}</h2>
+          <h2>Tipo de Usuario: {{ session.cargo }}</h2>
+        </div>
+        <div class="user-buttons">
+          <a href="{{ url_for('logout')}}"
+            ><button class="button-user">Logout</button></a
+          >
+          <button class="button-user" onclick="confirmar()">
+            Excluir conta
+          </button>
+        </div>
+      </section>
+    </main>
+    <div class="pop_up" id="popup">
+      <h2>Tem certeza que deseja excluir sua conta?</h2>
+      <p>Essa ação não pode ser desfeita.</p>
+      <div class="pop_up-buttons">
+        <a
+          href="{{ url_for('excluir_conta', codigo=session.codigo, propia_conta=True) }}"
+          ><button class="button-login">Sim</button></a
+        >
+        <button class="button-login" onclick="confirmar()">Não</button>
+      </div>
+    </div>
+    <script src="../static/js/confirmation.js"></script>
+  </body>
+</html>

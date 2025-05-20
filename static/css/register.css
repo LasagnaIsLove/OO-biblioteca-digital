@@ -1,0 +1,109 @@
+.nav-buttons {
+    margin: auto 15px auto auto;
+    width: fit-content;
+}
+
+.logo {
+    height: 100%;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+    margin: 0px 0px 0px 15px;
+    
+}
+
+.button-login {
+    width: fit-content;
+    height: 50px;
+
+}
+
+.button-enter {
+    width: fit-content;
+    height: 50px;
+    margin: 0px 0 5px 0;
+}
+.main-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #988278;
+    border-radius: 20px;
+    padding: 20px;
+    width: 40%;
+}
+
+.barra {
+    width: 90%;
+    height: 2px;
+    background-color: #371824;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
+}
+
+p {
+    text-indent: 0px !important;
+    color: #371824 !important;
+    margin: 0px 0px 15px 0px !important;
+}
+
+label{
+    text-indent: 0px !important;
+    color: #371824 !important;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 50px;
+    margin: 0px 0px 15px 0px;
+    width: 265px;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+}
+
+.container-radio {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
+
+.container-radio input[type="radio"] {
+    display: none;
+}
+
+.container-radio .checkmark {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #4E342E;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+  }
+
+.container-radio input[type="radio"]:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background: #4E342E;
+    border-radius: 50%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

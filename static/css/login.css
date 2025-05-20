@@ -1,0 +1,40 @@
+.nav-buttons {
+    margin: auto 15px auto auto;
+    width: fit-content;
+}
+
+.button-login {
+    width: fit-content;
+    height: 50px;
+}
+
+.button-enter {
+    width: fit-content;
+    height: 50px;
+    margin: 20px 0 20px 0;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #988278;
+    border-radius: 20px;
+    padding: 20px;
+    width: 40%;
+}
+
+.barra {
+    width: 90%;
+    height: 2px;
+    background-color: #371824;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
+}
+
+p {
+    text-indent: 0px !important;
+    color: #371824 !important;
+    margin: 0px 0px 15px 0px !important;
+}

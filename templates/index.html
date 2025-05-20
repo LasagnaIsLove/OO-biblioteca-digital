@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en, pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="icon" href="../static/images/logo.png" type="image.png" />
+    <title>Index</title>
+  </head>
+  <body>
+    <header>
+      <img src="../static/images/logo.png" alt="Logo do site" class="logo" />
+      <h1>Biblioteca Digital</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a class="nav-links" href="/about">Sobre</a></li>
+          <li><a class="nav-links" href="/contact">Contato</a></li>
+          <li><a class="nav-links" href="/somos">Quem somos</a></li>
+          {% if session.user %}
+          <li><a class="nav-links" href="/home">Home</a></li>
+          {% endif %}
+        </ul>
+        <ul class="nav-buttons">
+          {% if session.user %}
+          <p>{{ session.user }}</p>
+          <a href="/user/{{ session.codigo }}"
+            ><img
+              src="../static/images/perfil.png"
+              alt="perfil generico"
+              style="height: 100px"
+            />
+          </a>
+          {% else %}
+          <a href="/login"><button class="button-login">Entrar</button></a>
+          <a href="/register"
+            ><button class="button-login">Cadastrar-se</button></a
+          >
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main-box">
+        <img
+          src="../static/images/logo.png"
+          alt="Logo do site"
+          style="width: 150px"
+        />
+        <h2>Bem vindo a Biblioteca Digital</h2>
+        <p>
+          Aqui você pode encontrar uma variedade de livros e materiais digitais.
+          Navegue pelo nosso acervo e descubra novas leituras.
+        </p>
+        <p>
+          Se você é um autor ou editor, entre em contato conosco para saber como
+          publicar seu material na nossa plataforma. Estamos sempre buscando
+          novas parcerias e conteúdos interessantes para oferecer aos nossos
+          usuários.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

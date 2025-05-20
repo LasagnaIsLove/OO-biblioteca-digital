@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/delete.css" />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="icon" href="../static/images/logo.png" type="image.png" />
+    '
+    <title>Delete</title>
+  </head>
+  <body>
+    <header>
+      {% if session.user %}
+      <a href="/home" style="height: 100%; width: auto"
+        ><img src="../static/images/logo.png" alt="Logo do site" class="logo"
+      /></a>
+      {% else %}
+      <a href="/" style="height: 100%; width: auto"
+        ><img src="../static/images/logo.png" alt="Logo do site" class="logo"
+      /></a>
+      {% endif %}
+      <h1>Biblioteca Digital</h1>
+      <nav>
+        <ul class="nav-list"></ul>
+        <ul class="nav-buttons">
+          <a href="/user/{{ session.codigo }}"
+            ><img
+              src="../static/images/perfil.png"
+              alt="perfil generico"
+              style="height: 100px"
+            />
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main-box">
+        <h2>Excluir Cadastro</h2>
+        <form method="POST">
+          <input
+            type="text"
+            id="codigo"
+            name="codigo"
+            placeholder="Codigo"
+            required
+          />
+          <button type="submit">Excluir</button>
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %} {% if success %}
+        <p class="success">{{ success }}</p>
+        {% endif %}
+      </section>
+    </main>
+    <div class="pop_up" id="popup">
+      <h2>Tem certeza que deseja excluir sua conta?</h2>
+      <p>Essa ação não pode ser desfeita.</p>
+      <div class="pop_up-buttons">
+        <a href="{{ url_for('excluir_conta', codigo=codigo) }}"
+          ><button class="button-login">Sim</button></a
+        >
+        <button class="button-login" onclick="confirmar()">Não</button>
+      </div>
+    </div>
+    <script src="../static/js/sidebar.js"></script>
+    <script src="../static/js/confirmation.js"></script>
+    {% if pop_up %}
+    <script>
+      confirmar();
+    </script>
+    {% endif %}
+  </body>
+</html>
