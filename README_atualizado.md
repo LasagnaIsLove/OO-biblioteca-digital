@@ -41,17 +41,18 @@ OO-biblioteca-digital-main/
 │   ├── utils.py          # Funções auxiliares (Validações, Atualizações)
 │   └── cripto.py         # Criptografia de senhas
 ├── templates/            # Páginas HTML (Jinja2)
-│   ├── index.html        # Página inicial
-│   ├── login.html        # Formulário de login
+│   ├── delete.html        # Página inicial
+│   ├── history.html        # Formulário de login
+│   ├── home.html
+│   ├── index.html
+│   ├── login.html
 │   ├── register_book.html
-│   ├── register_user.html
-│   ├── loan_book.html
-│   ├── return_book.html
-│   └── history.html
+│   ├── register.html
+│   ├── search.html
+│   └── user.html
 ├── static/               # Arquivos estáticos (CSS, JS, images)
 │   ├── css/
 │   └── js/
-└── teste.py              # Script de testes (opcional)
 ```
 
 ---
@@ -62,11 +63,11 @@ OO-biblioteca-digital-main/
 | ------ | -------------------- | ------------------- | --------------------------------------- |
 | UC01   | Cadastrar Livro      | Funcionário         | Adiciona novos livros ao acervo         |
 | UC02   | Buscar Livro         | Cliente/Funcionário | Pesquisa livros por critérios           |
-| UC03   | Cadastrar Usuário    | Funcionário         | Registra novos clientes ou funcionários |
+| UC03   | Cadastrar Usuário    | Cliente/Funcionário | Registra novos clientes ou funcionários |
 | UC04   | Login                | Cliente/Funcionário | Autentica acesso ao sistema             |
-| UC05   | Realizar Empréstimo  | Cliente             | Empréstimo de livro disponível          |
-| UC06   | Devolver Livro       | Cliente             | Devolve livro emprestado                |
-| UC07   | Visualizar Histórico | Cliente             | Exibe histórico de empréstimos          |
+| UC05   | Realizar Empréstimo  | User                | Empréstimo de livro disponível          |
+| UC06   | Devolver Livro       | User                | Devolve livro emprestado                |
+| UC07   | Visualizar Histórico | User                | Exibe histórico de empréstimos          |
 
 ---
 
@@ -120,53 +121,58 @@ OO-biblioteca-digital-main/
 ```mermaid
 classDiagram
     class Biblioteca {
-        - livros : list<Livro>
-        - usuarios : list<Usuario>
+        - Livro : dict<livro>
         + adicionar_livro()
-        + buscar_livro()
-        + emprestar_livro(livroISBN, usuarioID)
-        + devolver_livro(livroISBN, usuarioID)
-        + carregar_dados()
-        + salvar_dados()
     }
     class Livro {
         - titulo : str
         - autor : str
         - isbn : str
         - ano : int
-        - editora : str
         - disponivel : bool
-        + to_dict() : dict
+        + gerar_livro() : dict
     }
-    class Usuario {
+    class User {
         - nome : str
         - matricula : str
         - email : str
-        - senha_hash : str
-        + autenticar(senha : str) : bool
+        - senha : str
+        + criptografar(senha : str) : str
+        + gerar_cadastro() : dict
     }
     class Cliente {
-        + emprestar(livroISBN : str) : bool
-        + devolver(livroISBN : str) : bool
+       - admin: bool
+       - funcionario: bool
+       + gerar_codigo(): str
+       + gerar_cadastro(): dict
     }
     class Funcionario {
-        + cadastrar_livro(livro : Livro) : None
-        + cadastrar_usuario(usuario : Usuario) : None
+       - admin: bool
+       - funcionario: bool
+       + gerar_codigo(): str
+       + gerar_cadastro(): dict
+    }
+    class Admin {
+       - admin: bool
+       - funcionario: bool
+       + gerar_codigo(): str
+       + gerar_cadastro(): dict
     }
     class Database {
         + load(arquivo : str) : dict
         + save(arquivo : str, dados : dict) : None
     }
     class Cripto {
-        + hash_password(senha : str) : str
-        + check_password(senha : str, hash : str) : bool
+        + criptografar(senha : str) : str
+        + descriptografar(senha : str, senha_cripto : str) : bool
     }
 
-    Biblioteca "1" o-- "*" Livro
-    Biblioteca "1" o-- "*" Usuario
-    Usuario <|-- Cliente
-    Usuario <|-- Funcionario
-    Biblioteca ..> Database : utiliza
+    Biblioteca <-.-.-> Livro
+    Cliente ---o> User
+    Funcionario ---o> User
+    Admin ---o> User
+    Biblioteca -.-.-> Database : utiliza
+ 
     Usuario ..> Cripto : utiliza
 ```
 
