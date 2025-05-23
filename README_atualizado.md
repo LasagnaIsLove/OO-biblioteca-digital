@@ -41,8 +41,8 @@ OO-biblioteca-digital-main/
 │   ├── utils.py          # Funções auxiliares (Validações, Atualizações)
 │   └── cripto.py         # Criptografia de senhas
 ├── templates/            # Páginas HTML (Jinja2)
-│   ├── delete.html        # Página inicial
-│   ├── history.html        # Formulário de login
+│   ├── delete.html       
+│   ├── history.html     
 │   ├── home.html
 │   ├── index.html
 │   ├── login.html
@@ -61,10 +61,10 @@ OO-biblioteca-digital-main/
 
 | Código | Caso de Uso          | Ator                | Descrição                               |
 | ------ | -------------------- | ------------------- | --------------------------------------- |
-| UC01   | Cadastrar Livro      | Funcionário         | Adiciona novos livros ao acervo         |
-| UC02   | Buscar Livro         | Cliente/Funcionário | Pesquisa livros por critérios           |
-| UC03   | Cadastrar Usuário    | Cliente/Funcionário | Registra novos clientes ou funcionários |
-| UC04   | Login                | Cliente/Funcionário | Autentica acesso ao sistema             |
+| UC01   | Cadastrar Livro      | Funcionário/Admin   | Adiciona novos livros ao acervo         |
+| UC02   | Buscar Livro         | User                | Pesquisa livros por critérios           |
+| UC03   | Cadastrar Usuário    | User                | Registra novos clientes ou funcionários |
+| UC04   | Login                | User                | Autentica acesso ao sistema             |
 | UC05   | Realizar Empréstimo  | User                | Empréstimo de livro disponível          |
 | UC06   | Devolver Livro       | User                | Devolve livro emprestado                |
 | UC07   | Visualizar Histórico | User                | Exibe histórico de empréstimos          |
@@ -104,6 +104,13 @@ OO-biblioteca-digital-main/
    ```
    http://localhost:5000
    ```
+
+---
+
+## 🕶️ Para entrar como admin
+
+   Login: A0
+   Senha: 123
 
 ---
 
