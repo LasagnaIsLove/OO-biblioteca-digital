@@ -109,9 +109,12 @@ OO-biblioteca-digital-main/
 
 ## 🕶️ Para entrar como admin
 
-   Login: A0
-   Senha: 123
-
+   ```Login:
+   A0
+   ```
+   ```Senha:
+   123
+   ```
 ---
 
 ## 📄 Tecnologias
