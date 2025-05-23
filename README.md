@@ -63,7 +63,7 @@ OO-biblioteca-digital-main/
 | ------ | -------------------- | ------------------- | --------------------------------------- |
 | UC01   | Cadastrar Livro      | Funcionário/Admin   | Adiciona novos livros ao acervo         |
 | UC02   | Buscar Livro         | User                | Pesquisa livros por critérios           |
-| UC03   | Cadastrar Usuário    | User                | Registra novos clientes ou funcionários |
+| UC03   | Cadastrar            | User                | Registra novos clientes ou funcionários |
 | UC04   | Login                | User                | Autentica acesso ao sistema             |
 | UC05   | Realizar Empréstimo  | User                | Empréstimo de livro disponível          |
 | UC06   | Devolver Livro       | User                | Devolve livro emprestado                |
@@ -129,7 +129,7 @@ Senha:
 
 ## 🧠 Diagrama de Classes
 
-```mermaid
+```
 classDiagram
     class Biblioteca {
         - Livro : dict<livro>
