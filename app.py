@@ -3,7 +3,7 @@ from package.user import Cliente, Funcionario
 from package.biblioteca import Biblioteca
 from package.utils import Utils
 from package.cripto import Criptografia
-import re, json, os
+import re
 
 u = Utils()
 
@@ -192,7 +192,7 @@ def alterar_qtd():
 
 @app.route("/excluir_livro", methods=["GET", "POST"])
 def excluir_livro():
-    l_ISBN = request.form.get("ISBN")
+    l_ISBN = request.form.get("ISBN2")
     
     if not l_ISBN:
         print("Livro não encontrado no sistema")

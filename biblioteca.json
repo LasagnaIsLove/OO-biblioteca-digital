@@ -1,21 +1,5 @@
 [
     {
-        "titulo": "O \u00daltimo Sil\u00eancio",
-        "autor": "Henrique Sampaio",
-        "ano": 2017,
-        "ISBN": "978-0-123456-02-8",
-        "quantidade": 1,
-        "disponivel": true
-    },
-    {
-        "titulo": "C\u00f3digos de Bruma",
-        "autor": "Alice Mariani",
-        "ano": 2021,
-        "ISBN": "978-0-123456-03-5",
-        "quantidade": 1,
-        "disponivel": true
-    },
-    {
         "titulo": "A Teia de Cristal",
         "autor": "V\u00edtor Alencar",
         "ano": 2015,
@@ -388,14 +372,6 @@
         "autor": "Vit\u00f3ria Assis",
         "ano": 2019,
         "ISBN": "978-0-123456-50-8",
-        "quantidade": 1,
-        "disponivel": true
-    },
-    {
-        "titulo": "1",
-        "autor": "1",
-        "ano": "1",
-        "ISBN": "1",
         "quantidade": 1,
         "disponivel": true
     }

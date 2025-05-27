@@ -137,7 +137,7 @@
             </form>
             {% if session["funcionario"] %}
             <form action="/excluir_livro" method="post">
-              <input type="hidden" name="ISBN" value="{{ livro['ISBN'] }}" />
+              <input type="hidden" name="ISBN2" value="{{ livro['ISBN'] }}" />
               <button type="submit" class="button-reserva">Excluir</button>
             </form>
             {% endif %}

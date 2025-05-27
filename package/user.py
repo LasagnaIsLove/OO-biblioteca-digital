@@ -1,14 +1,12 @@
-import os, json
 from package.database import Database
 from package.cripto import Criptografia
     
-class User(Criptografia):
+class User(Criptografia, Database):
     def __init__(self, first_name, last_name, password, email):
         self.first_name = first_name
         self.last_name = last_name
         self.password = Criptografia().criptografar(password)
         self.email = email
-        self.db = Database()
         
     def gerar_cadastro(self):
         self.cadastro = {
@@ -27,7 +25,7 @@ class Funcionario(User):
         self.funcionario = True
         
     def gerar_codigo_funcionario(self):
-        usuarios = self.db.abrir_data("user")
+        usuarios = Database().abrir_data("user")
         if len(usuarios) > 0:
             for usuario in usuarios[::-1]:
                 if usuario["admin"] == False and usuario["funcionario"] == True:
@@ -41,14 +39,14 @@ class Funcionario(User):
             self.codigo = "F1"
             
     def promover_conta_cliente(self):
-        usuarios = self.db.abrir_data("users")
+        usuarios = Database().abrir_data("users")
             
         for conta in usuarios:
             if conta["email"] == self.email:
                 usuarios.remove(conta)
                 break
         
-        self.db.salvar_data("users", usuarios)
+        Database().salvar_data("users", usuarios)
         self.gerar_cadastro()
             
     def gerar_cadastro(self):
@@ -58,7 +56,7 @@ class Funcionario(User):
         self.cadastro["funcionario"] = self.funcionario
         self.cadastro["admin"] = self.admin
         
-        self.db.salvar_cadastro(self.cadastro)
+        Database().salvar_cadastro(self.cadastro)
         
 class Cliente(User):
     def __init__(self, first_name, last_name, password, email):
@@ -70,7 +68,7 @@ class Cliente(User):
         return False
             
     def gerar_codigo_cliente(self):
-        usuarios = self.db.abrir_data("users")     
+        usuarios = Database().abrir_data("users")     
         if len(usuarios) > 0:
             for usuario in usuarios[::-1]:
                 if usuario["admin"] == False and usuario["funcionario"] == False:
@@ -91,7 +89,7 @@ class Cliente(User):
         self.cadastro["funcionario"] = self.funcionario
         self.cadastro["admin"] = self.admin
         
-        self.db.salvar_cadastro(self.cadastro)
+        Database().salvar_cadastro(self.cadastro)
             
 class Admin(User):
     def __init__(self, first_name, last_name, password, email):
@@ -100,7 +98,7 @@ class Admin(User):
         self.funcionario = True
         
     def gerar_codigo_admin(self):
-        usuarios = self.db.abrir_data("users")
+        usuarios = Database().abrir_data("users")
                 
         if len(usuarios) > 0:
             for usuario in usuarios[::-1]:
@@ -122,7 +120,7 @@ class Admin(User):
         self.cadastro["funcionario"] = self.funcionario
         self.cadastro["admin"] = self.admin
         
-        self.db.salvar_cadastro()
+        Database().salvar_cadastro()
 
 # logica pra ler o json e pegar os atributos
 # instanciar um objeto temporario com os atributos temp = User(a1, a2, a3, a4)

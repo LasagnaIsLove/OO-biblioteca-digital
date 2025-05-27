@@ -1,11 +1,8 @@
 from package.database import Database
 
-class Utils():
-    def __init__(self):
-        self.db = Database()
-        
+class Utils(Database):        
     def checar_email(self, email):
-        usuarios = self.db.abrir_data("users")
+        usuarios = Database().abrir_data("users")
                 
         for usuario in usuarios:
             if usuario["email"] == email:
@@ -14,7 +11,7 @@ class Utils():
 
         
     def checar_codigo(self, codigo):
-        usuarios = self.db.abrir_data("users")
+        usuarios = Database().abrir_data("users")
         
         for usuario in usuarios:
             if usuario["codigo"] == codigo:
@@ -22,7 +19,7 @@ class Utils():
         return False
         
     def excluir_cadastro(self, codigo):
-        usuarios = self.db.abrir_data("users")
+        usuarios = Database().abrir_data("users")
 
         check = False
         for usuario in usuarios:
@@ -35,7 +32,7 @@ class Utils():
         if check == False:
             print("Cadastro não encontrado.") 
         
-        self.db.salvar_data("users", usuarios)
+        Database().salvar_data("users", usuarios)
         
     def normalizar (self, texto):
         acentos = {
@@ -77,7 +74,7 @@ class Utils():
     def buscar_livro(self, id, id_type, disp_bool):
         self.atualizar_estoque()
         id_normal = self.normalizar(id)
-        livros = self.db.abrir_data("biblioteca")
+        livros = Database().abrir_data("biblioteca")
         
         livros_encontrados = []
         if disp_bool:
@@ -112,7 +109,7 @@ class Utils():
         return livros_encontrados
     
     def atualizar_estoque(self):
-        livros = self.db.abrir_data("biblioteca")
+        livros = Database().abrir_data("biblioteca")
         
         for l in livros:
             if l["quantidade"] > 0:
@@ -121,10 +118,10 @@ class Utils():
             else:
                 l["disponivel"] = False      
         
-        self.db.salvar_data("biblioteca", livros)
+        Database().salvar_data("biblioteca", livros)
     
     def incrementar_livro(self, ISBN, qtd):
-        livros = self.db.abrir_data("biblioteca")
+        livros = Database().abrir_data("biblioteca")
         print(ISBN)
         for l in livros:
             print(l)
@@ -143,7 +140,7 @@ class Utils():
             print("Quantidade insuficiente par devolução")
             return False
         
-        self.db.salvar_data("biblioteca", livros) 
+        Database().salvar_data("biblioteca", livros) 
         self.atualizar_estoque()               
         return True
         
@@ -151,7 +148,7 @@ class Utils():
     def emprestar(self, l_ISBN , codigo_user, qtd=1):
         user = self.checar_codigo(codigo_user)
         
-        livros = self.db.abrir_data("biblioteca")
+        livros = Database().abrir_data("biblioteca")
         
         
         for l in livros:
@@ -169,11 +166,11 @@ class Utils():
         
             print(f"{qtd} cópia(s) de {livro["titulo"]} emprestada(s) com sucesso.")                
             
-            self.db.salvar_data("biblioteca", livros)
+            Database().salvar_data("biblioteca", livros)
             
             self.atualizar_estoque()
                 
-            emprestimos = self.db.abrir_data("emprestimos")
+            emprestimos = Database().abrir_data("emprestimos")
             
             emprestimo = {
                 "nome" : user["first_name"] + " " + user["last_name"],
@@ -185,7 +182,7 @@ class Utils():
             
             emprestimos.append(emprestimo)
             
-            self.db.salvar_data("emprestimos", emprestimos)
+            Database().salvar_data("emprestimos", emprestimos)
                         
             return True
         
@@ -193,7 +190,7 @@ class Utils():
         return False
 
     def devolver(self, codigo_user, ISBN, qtd=1):
-        emprestimos = self.db.abrir_data("emprestimos")
+        emprestimos = Database().abrir_data("emprestimos")
         check = False
         for e in emprestimos:
             if e["codigo"] == codigo_user and e["ISBN"] == ISBN:
@@ -210,28 +207,30 @@ class Utils():
         
         if self.incrementar_livro(l_ISBN, qtd):
             print(f"{qtd} cópias de {e["livro"]} devolvidas com sucesso.")
-            self.db.salvar_data("emprestimos", emprestimos)
+            Database().salvar_data("emprestimos", emprestimos)
             return True
             
         print("Quantidade inválida.")
         return False
     
     def excluir_livro(self, ISBN):
-        livro = self.buscar_livro(ISBN, "ISBN", disp_bool=False)
-        livro = livro[0]
-        
-        livros = self.db.abrir_data("biblioteca")
+        livros = Database().abrir_data("biblioteca")
+        for livro in livros:
+            if livro["ISBN"] == ISBN:
+                livro = livro
+                break
         
         if livro in livros:
+            print(livro)
             livros.remove(livro)
-            self.db.salvar_data("biblioteca", livros)
+            Database().salvar_data("biblioteca", livros)
             return True
         
         print("livro não encontrado")
         return False
     
     def historico(self, codigo):
-        emprestimos = self.db.abrir_data("emprestimos")
+        emprestimos = Database().abrir_data("emprestimos")
         emprestimos_encotrados = []
         for e in emprestimos:
             if e["codigo"] == codigo:
