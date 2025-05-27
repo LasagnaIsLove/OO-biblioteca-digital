@@ -129,7 +129,7 @@ Senha:
 
 ## 🧠 Diagrama de Classes
 
-![Diagrama de Classes](./Diagrama_biblioteca_digital.drawio.png)
+![Diagrama de Classes](./static/images/Diagrama_de_classes.svg)
 
 ---
 
