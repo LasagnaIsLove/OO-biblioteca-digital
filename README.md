@@ -129,63 +129,7 @@ Senha:
 
 ## 🧠 Diagrama de Classes
 
-```
-classDiagram
-    class Biblioteca {
-        - Livro : dict<livro>
-        + adicionar_livro()
-    }
-    class Livro {
-        - titulo : str
-        - autor : str
-        - isbn : str
-        - ano : int
-        - disponivel : bool
-        + gerar_livro() : dict
-    }
-    class User {
-        - nome : str
-        - matricula : str
-        - email : str
-        - senha : str
-        + criptografar(senha : str) : str
-        + gerar_cadastro() : dict
-    }
-    class Cliente {
-       - admin: bool
-       - funcionario: bool
-       + gerar_codigo(): str
-       + gerar_cadastro(): dict
-    }
-    class Funcionario {
-       - admin: bool
-       - funcionario: bool
-       + gerar_codigo(): str
-       + gerar_cadastro(): dict
-    }
-    class Admin {
-       - admin: bool
-       - funcionario: bool
-       + gerar_codigo(): str
-       + gerar_cadastro(): dict
-    }
-    class Database {
-        + load(arquivo : str) : dict
-        + save(arquivo : str, dados : dict) : None
-    }
-    class Cripto {
-        + criptografar(senha : str) : str
-        + descriptografar(senha : str, senha_cripto : str) : bool
-    }
-
-    Biblioteca <-.-.-> Livro
-    Cliente ---o> User
-    Funcionario ---o> User
-    Admin ---o> User
-    Biblioteca -.-.-> Database : utiliza
- 
-    Usuario ..> Cripto : utiliza
-```
+![Diagrama de Classes](./Diagrama_biblioteca_digital.drawio.png)
 
 ---
 
