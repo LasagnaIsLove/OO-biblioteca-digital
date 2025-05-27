@@ -1,100 +1,198 @@
-# OO-biblioteca-digital
-  Este projeto foi desenvolvido como parte da disciplina de Orientação a Objetos e tem como objetivo simular o funcionamento básico de uma biblioteca digital, permitindo o cadastro, login, empréstimo e devolução de livros por usuários autenticados.
+# 📚 Biblioteca Digital – Aplicação Web em Flask
+
+Este projeto implementa uma **biblioteca digital** utilizando **Python 3.12** e **Flask**, aplicando conceitos de **Programação Orientada a Objetos** (POO). Permite o cadastro, busca, empréstimo e devolução de livros, além de gerenciamento de usuários (Clientes e Funcionários).
 
 ---
 
-## ✅ Objetivo do Projeto
-  O sistema visa proporcionar uma experiência simples e funcional para gerenciamento de livros e empréstimos, usando conceitos de orientação a objetos como herança, polimorfismo, encapsulamento e modularização.
+## 🎯 Objetivos
 
----
-
-## 🧱 Estrutura do Projeto
-```
-biblioteca-digital/
-  ├── 📄 README.md
-  ├── 🧠 main.py
-  └── 📦 package/
-    ├── 📘 livro.py
-    ├── 👤 usuario.py
-    ├── 🔁 emprestimo.py
-    ├── 🏛️ biblioteca.py
-    └── 🧩 mixins.py
-```
-
-- **main.py**: ponto de entrada do programa.
-- **package/**: pacote com todas as classes do sistema, organizadas por responsabilidade.
+- Demonstrar pilares da POO: **herança**, **polimorfismo**, **encapsulamento** e **modularização**.
+- Simular operações de uma biblioteca digital real.
+- Prover interface web simples e funcional.
 
 ---
 
 ## 🧩 Funcionalidades
 
-- Busca de livros
-- Cadastro de usuários (Consumidores e funcionários)
-- Login de usuários (Consumidores e funcionários)
-- Empréstimo e devolução de livros
-- Histórico de empréstimos
-- Controle de disponibilidade dos livros
+- 🔎 **Busca de livros** por título, autor ou ISBN.
+- 📚 **Cadastro de livros** (Funcionário).
+- 👥 **Cadastro de usuários** (Clientes e Funcionários).
+- 🔐 **Login** e **autenticação** de usuários.
+- 📖 **Empréstimo** e **devolução** de livros.
+- 📜 **Histórico** de empréstimos por usuário.
+- 📊 **Controle de estoque** com atualização automática.
 
 ---
 
-## 👥 Casos de Uso
+## 🧱 Estrutura do Projeto
 
-### UC01 – Cadastrar Livro
-- **Ator:** Funcionário
-- Permite que o funcionário cadastre um novo livro no sistema.
-
-### UC02 – Buscar Livro
-- **Ator:** Consumidor ou Funcionário
-- Permite pesquisar livros pelo título, autor ou ISBN.
-
-### UC03 – Cadastrar Usuário
-- **Ator:** Funcionário
-- Permite cadastrar um novo usuário do sistema (Consumidor ou funcionário).
-
-### UC04 – Realizar Login
-- **Ator:** Consumidor ou Funcionário
-- Permite que o usuário entre no sistema usando matrícula e senha.
-
-### UC05 – Realizar Empréstimo
-- **Ator:** Consumidor
-- Permite que o Consumidor realize o empréstimo de um livro disponível.
-
-### UC06 – Devolver Livro
-- **Ator:** Consumidor
-- Permite a devolução de um livro previamente emprestado.
-
-### UC07 – Visualizar Histórico
-- **Ator:** Consumidor
-- Exibe o histórico de empréstimos do usuário.
-
----
-
-## 📐 Diagrama de Classes
-
-### Classes Principais:
-
-- **Livro**
-  - Atributos: título, autor, ISBN, ano, editora, status
-- **Usuario** *(abstrata)*
-  - Subclasses: `Consumidor`, `Funcionario`
-  - Atributos: nome, matrícula, email
-- **Emprestimo**
-  - Atributos: livro, usuario, data_emprestimo, data_devolucao, devolvido
-- **Biblioteca**
-  - Métodos: adicionar_livro(), buscar_livro(), registrar_emprestimo(), registrar_devolucao(), listar_historico()
-
-### Relacionamentos e Conceitos Aplicados:
-- Herança: `Consumidor` e `Funcionario` herdam de `Usuario`
-- Polimorfismo: métodos como `exibir_perfil()` implementados de forma distinta em subclasses
-- Composição forte: `Biblioteca` contém listas de `Livro` e `Emprestimo`
-- Associação fraca: `Emprestimo` vincula `Usuario` e `Livro`
-- Mixin: `PesquisavelMixin` adiciona métodos reutilizáveis para busca
+```plain
+OO-biblioteca-digital-main/
+│
+├── app.py                # Aplicação Flask (rotas e lógica de navegação)
+├── biblioteca.json       # Banco de dados de livros (JSON)
+├── users.json            # Banco de dados de usuários (JSON)
+├── emprestimos.json      # Banco de dados de empréstimos (JSON)
+├── package/              # Módulo com classes e utilitários
+│   ├── biblioteca.py     # Classe Biblioteca (CRUD de livros)
+│   ├── livro.py          # Classe Livro
+│   ├── user.py           # Classes Usuario, Cliente, Funcionario
+│   ├── database.py       # Gerenciamento de JSON como DB
+│   ├── utils.py          # Funções auxiliares (Validações, Atualizações)
+│   └── cripto.py         # Criptografia de senhas
+├── templates/            # Páginas HTML (Jinja2)
+│   ├── delete.html       
+│   ├── history.html     
+│   ├── home.html
+│   ├── index.html
+│   ├── login.html
+│   ├── register_book.html
+│   ├── register.html
+│   ├── search.html
+│   └── user.html
+├── static/               # Arquivos estáticos (CSS, JS, images)
+│   ├── css/
+│   └── js/
+```
 
 ---
 
-## 💻 Tecnologias Utilizadas
+## 📌 Casos de Uso
+
+| Código | Caso de Uso          | Ator                | Descrição                               |
+| ------ | -------------------- | ------------------- | --------------------------------------- |
+| UC01   | Cadastrar Livro      | Funcionário/Admin   | Adiciona novos livros ao acervo         |
+| UC02   | Buscar Livro         | User                | Pesquisa livros por critérios           |
+| UC03   | Cadastrar            | User                | Registra novos clientes ou funcionários |
+| UC04   | Login                | User                | Autentica acesso ao sistema             |
+| UC05   | Realizar Empréstimo  | User                | Empréstimo de livro disponível          |
+| UC06   | Devolver Livro       | User                | Devolve livro emprestado                |
+| UC07   | Visualizar Histórico | User                | Exibe histórico de empréstimos          |
+
+---
+
+## ⚙️ Requisitos
 
 - Python 3.12
-- Programação orientada a objetos (POO)
-- Interface de linha de comando (CLI) para testes
+- Flask (pip install flask)
 
+---
+
+## 🚀 Como Executar
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/LasagnaIsLove/OO-biblioteca-digital.git
+   cd OO-biblioteca-digital-main
+   ```
+
+2. Instale o Flask:
+
+   ```bash
+   pip install flask
+   ```
+
+3. Execute a aplicação:
+
+   ```bash
+   python app.py
+   ```
+
+4. Abra no navegador:
+
+   ```
+   http://localhost:5000
+   ```
+
+---
+
+## 🕶️ Para entrar como admin
+Login:
+   ```
+   A0
+   ```
+Senha:
+   ```
+   123
+   ```
+---
+
+## 📄 Tecnologias
+
+- Linguagem: **Python 3.12**
+- Framework Web: **Flask**
+- Banco de dados: arquivos **JSON** (simples e sem dependências externas)
+- Templates: **Jinja2**
+
+---
+
+## 🧠 Diagrama de Classes
+
+```
+classDiagram
+    class Biblioteca {
+        - Livro : dict<livro>
+        + adicionar_livro()
+    }
+    class Livro {
+        - titulo : str
+        - autor : str
+        - isbn : str
+        - ano : int
+        - disponivel : bool
+        + gerar_livro() : dict
+    }
+    class User {
+        - nome : str
+        - matricula : str
+        - email : str
+        - senha : str
+        + criptografar(senha : str) : str
+        + gerar_cadastro() : dict
+    }
+    class Cliente {
+       - admin: bool
+       - funcionario: bool
+       + gerar_codigo(): str
+       + gerar_cadastro(): dict
+    }
+    class Funcionario {
+       - admin: bool
+       - funcionario: bool
+       + gerar_codigo(): str
+       + gerar_cadastro(): dict
+    }
+    class Admin {
+       - admin: bool
+       - funcionario: bool
+       + gerar_codigo(): str
+       + gerar_cadastro(): dict
+    }
+    class Database {
+        + load(arquivo : str) : dict
+        + save(arquivo : str, dados : dict) : None
+    }
+    class Cripto {
+        + criptografar(senha : str) : str
+        + descriptografar(senha : str, senha_cripto : str) : bool
+    }
+
+    Biblioteca <-.-.-> Livro
+    Cliente ---o> User
+    Funcionario ---o> User
+    Admin ---o> User
+    Biblioteca -.-.-> Database : utiliza
+ 
+    Usuario ..> Cripto : utiliza
+```
+
+---
+
+## 📝 Licença
+
+Projeto destinado a fins educacionais. Não possui licença específica.
+
+---
+
+*Desenvolvido para disciplina de Orientação a Objetos*
