@@ -55,6 +55,7 @@ OO-biblioteca-digital-main/
 │   └── js/
 ```
 Obs.: As páginas "Sobre", "Contato" e "Quem somos" são meramente ilustrativas e não foram concluídas, pois não agregaram ao aprendizado da disciplina.
+
 ---
 
 ## 📌 Casos de Uso
