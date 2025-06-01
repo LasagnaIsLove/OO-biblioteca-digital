@@ -2,6 +2,8 @@
 
 Este projeto implementa uma **biblioteca digital** utilizando **Python 3.12** e **Flask**, aplicando conceitos de **Programação Orientada a Objetos** (POO). Permite o cadastro, busca, empréstimo e devolução de livros, além de gerenciamento de usuários (Clientes e Funcionários).
 
+Obs.: Para voltar a pagina anterior apenas clique na logo do site no canto superior esquerdo.
+
 ---
 
 ## 🎯 Objetivos
